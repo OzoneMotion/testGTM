@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio de Práctica GTM</title>
+    
+    <!-- AQUÍ VA EL CÓDIGO DE GTM (HEAD) -->
+    <!-- Reemplaza 'GTM-XXXXXXX' con tu ID de contenedor -->
+    <!-- 
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    -->
+    <!-- FIN CÓDIGO GTM (HEAD) -->
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: #4285f4;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        nav {
+            background: #333;
+            color: white;
+            padding: 1rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: #f4f4f4;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .producto {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .producto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .producto img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            background: #e0e0e0;
+        }
+        
+        .precio {
+            font-size: 1.5rem;
+            color: #4285f4;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        button:hover {
+            background: #357ae8;
+        }
+        
+        .formulario {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+        
+        .formulario input,
+        .formulario textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .cta-button {
+            background: #34a853;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            background: #2d8e47;
+        }
+        
+        .secondary-button {
+            background: #ea4335;
+        }
+        
+        .secondary-button:hover {
+            background: #d33426;
+        }
+    </style>
+</head>
+<body>
+    <!-- AQUÍ VA EL CÓDIGO DE GTM (BODY) -->
+    <!-- Reemplaza 'GTM-XXXXXXX' con tu ID de contenedor -->
+    <!-- 
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    -->
+    <!-- FIN CÓDIGO GTM (BODY) -->
+
+    <header>
+        <h1>🏪 Mi Tienda de Práctica GTM</h1>
+        <p>Sitio web para aprender Google Tag Manager</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio" id="nav-inicio">Inicio</a></li>
+            <li><a href="#productos" id="nav-productos">Productos</a></li>
+            <li><a href="#contacto" id="nav-contacto">Contacto</a></li>
+            <li><a href="#about" id="nav-about">Acerca de</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="inicio" class="hero">
+            <h2>Bienvenido a tu sitio de práctica</h2>
+            <p>Aquí podrás practicar eventos, conversiones y seguimiento con GTM</p>
+            <button class="cta-button" onclick="registrarEvento('cta_hero', 'Hero CTA Click')">
+                ¡Comenzar ahora!
+            </button>
+        </section>
+
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="productos">
+                <div class="producto" data-producto-id="001">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px; border-radius: 4px; margin-bottom: 1rem;"></div>
+                    <h3>Producto 1</h3>
+                    <p>Descripción del producto premium</p>
+                    <div class="precio">$99.99</div>
+                    <button onclick="agregarCarrito('Producto 1', 99.99, '001')">
+                        Añadir al carrito
+                    </button>
+                </div>
+
+                <div class="producto" data-producto-id="002">
+                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); height: 200px; border-radius: 4px; margin-bottom: 1rem;"></div>
+                    <h3>Producto 2</h3>
+                    <p>Descripción del producto especial</p>
+                    <div class="precio">$149.99</div>
+                    <button onclick="agregarCarrito('Producto 2', 149.99, '002')">
+                        Añadir al carrito
+                    </button>
+                </div>
+
+                <div class="producto" data-producto-id="003">
+                    <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); height: 200px; border-radius: 4px; margin-bottom: 1rem;"></div>
+                    <h3>Producto 3</h3>
+                    <p>Descripción del producto exclusivo</p>
+                    <div class="precio">$199.99</div>
+                    <button onclick="agregarCarrito('Producto 3', 199.99, '003')">
+                        Añadir al carrito
+                    </button>
+                </div>
+
+                <div class="producto" data-producto-id="004">
+                    <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); height: 200px; border-radius: 4px; margin-bottom: 1rem;"></div>
+                    <h3>Producto 4</h3>
+                    <p>Descripción del producto destacado</p>
+                    <div class="precio">$79.99</div>
+                    <button onclick="agregarCarrito('Producto 4', 79.99, '004')">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="secondary-button" onclick="finalizarCompra()">
+                    🛒 Finalizar Compra
+                </button>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Formulario de Contacto</h2>
+            <form class="formulario" id="form-contacto" onsubmit="enviarFormulario(event)">
+                <input type="text" id="nombre" placeholder="Tu nombre" required>
+                <input type="email" id="email" placeholder="Tu email" required>
+                <textarea id="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
+
+        <section id="about">
+            <h2>Acerca de este sitio</h2>
+            <p>Este es un sitio HTML básico diseñado específicamente para practicar Google Tag Manager. Incluye:</p>
+            <ul style="margin: 1rem 2rem;">
+                <li>✅ Enlaces de navegación para rastrear clics</li>
+                <li>✅ Botones con eventos personalizados</li>
+                <li>✅ Simulación de e-commerce (agregar al carrito)</li>
+                <li>✅ Formulario de contacto</li>
+                <li>✅ dataLayer configurado</li>
+            </ul>
+            
+            <div style="background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                <h3>📚 Cómo usar este sitio:</h3>
+                <ol style="margin: 1rem 2rem;">
+                    <li>Crea una cuenta en Google Tag Manager</li>
+                    <li>Obtén tu código de contenedor (GTM-XXXXXXX)</li>
+                    <li>Reemplaza 'GTM-XXXXXXX' en este archivo con tu ID</li>
+                    <li>Sube este archivo a GitHub Pages, Netlify o cualquier hosting</li>
+                    <li>Comienza a crear etiquetas, activadores y variables en GTM</li>
+                </ol>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button onclick="registrarEvento('video_play', 'Video Tutorial Click')">
+                    ▶️ Ver tutorial de GTM
+                </button>
+                <button class="cta-button" onclick="descargarRecurso()">
+                    📥 Descargar recurso
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sitio de Práctica GTM - Creado para aprender</p>
+        <p>
+            <a href="#" style="color: white; margin: 0 1rem;" onclick="registrarEvento('footer_link', 'Privacy Policy')">Política de Privacidad</a>
+            <a href="#" style="color: white; margin: 0 1rem;" onclick="registrarEvento('footer_link', 'Terms')">Términos</a>
+        </p>
+    </footer>
+
+    <script>
+        // Inicializar dataLayer
+        window.dataLayer = window.dataLayer || [];
+
+        // Función para registrar eventos personalizados
+        function registrarEvento(categoria, accion) {
+            window.dataLayer.push({
+                'event': 'custom_event',
+                'event_category': categoria,
+                'event_action': accion,
+                'timestamp': new Date().toISOString()
+            });
+            console.log('✅ Evento registrado:', categoria, '-', accion);
+            alert('Evento registrado: ' + accion + '\n\nRevisa la consola y el dataLayer en GTM Preview');
+        }
+
+        // Función para simular agregar al carrito
+        function agregarCarrito(producto, precio, id) {
+            window.dataLayer.push({
+                'event': 'add_to_cart',
+                'ecommerce': {
+                    'currency': 'USD',
+                    'value': precio,
+                    'items': [{
+                        'item_id': id,
+                        'item_name': producto,
+                        'price': precio,
+                        'quantity': 1
+                    }]
+                }
+            });
+            console.log('🛒 Producto agregado:', producto);
+            alert('¡' + producto + ' agregado al carrito!\n\nPrecio: $' + precio + '\n\nRevisa el dataLayer en GTM Preview');
+        }
+
+        // Función para simular finalizar compra
+        function finalizarCompra() {
+            window.dataLayer.push({
+                'event': 'purchase',
+                'ecommerce': {
+                    'transaction_id': 'T-' + Date.now(),
+                    'value': 529.96,
+                    'currency': 'USD',
+                    'items': [
+                        {
+                            'item_id': '001',
+                            'item_name': 'Producto 1',
+                            'price': 99.99,
+                            'quantity': 1
+                        }
+                    ]
+                }
+            });
+            console.log('💰 Compra finalizada');
+            alert('¡Compra realizada con éxito!\n\nTotal: $529.96\n\nRevisa el evento "purchase" en GTM');
+        }
+
+        // Función para enviar formulario
+        function enviarFormulario(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            
+            window.dataLayer.push({
+                'event': 'form_submission',
+                'form_id': 'form-contacto',
+                'form_name': 'Formulario de Contacto',
+                'user_name': nombre,
+                'user_email': email
+            });
+            
+            console.log('📧 Formulario enviado');
+            alert('¡Formulario enviado con éxito!\n\nNombre: ' + nombre + '\nEmail: ' + email + '\n\nRevisa el evento en GTM');
+            
+            e.target.reset();
+        }
+
+        // Función para descargar recurso
+        function descargarRecurso() {
+            window.dataLayer.push({
+                'event': 'file_download',
+                'file_name': 'guia-gtm.pdf',
+                'file_type': 'pdf'
+            });
+            console.log('📥 Descarga iniciada');
+            alert('¡Descarga iniciada!\n\nArchivo: guia-gtm.pdf\n\nRevisa el evento en GTM');
+        }
+
+        // Push de pageview al cargar la página
+        window.dataLayer.push({
+            'event': 'page_view',
+            'page_title': document.title,
+            'page_location': window.location.href
+        });
+
+        console.log('🎯 Sitio de práctica GTM cargado correctamente');
+        console.log('📊 dataLayer inicializado:', window.dataLayer);
+    </script>
+</body>
+</html>
